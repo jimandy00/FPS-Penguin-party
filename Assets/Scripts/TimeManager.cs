@@ -29,7 +29,7 @@ public class TimeManager : MonoBehaviour
             timeTextUI.text = $"{min} : {sec}";
             Debug.Log("시간 가는중");
         }
-        else if (currentTime == 0)
+        else if (min == 0 && sec == 0)
         {
             Stop_Timer();
         }
