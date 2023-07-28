@@ -216,6 +216,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 34746882}
+  - component: {fileID: 34746883}
   m_Layer: 0
   m_Name: TimerManager
   m_TagString: Untagged
@@ -238,6 +239,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &34746883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34746881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ad9346f643d7c468b1d92f6f356ec7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTextUI: {fileID: 1333217911}
 --- !u!4 &88827099 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 28f113bc1593119448bfebc93373c1ad, type: 3}
@@ -1505,7 +1519,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe2b92eca8f6d9e45915c30894dd2c8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOption: {fileID: 940726514}
 --- !u!4 &1031865133
 Transform:
   m_ObjectHideFlags: 0
