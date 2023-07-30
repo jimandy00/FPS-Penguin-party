@@ -11,6 +11,11 @@ public class DestroyZone : MonoBehaviour
     {
         if (other.gameObject.CompareTag("CutePenguin"))
         {
+
+            ParticleManager.instance.particleState = true;
+            ParticleManager.instance.particleSystem.transform.position = other.transform.position;
+            ParticleManager.instance.
+
             Destroy(other.gameObject);
             GameManager.Instance.OpenGameOverUI();
             MusicManager.instance.DiePenguin();
