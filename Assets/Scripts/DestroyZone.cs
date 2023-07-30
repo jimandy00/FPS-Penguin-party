@@ -9,13 +9,11 @@ public class DestroyZone : MonoBehaviour
     // 적이 감지되면 삭제하고 점수를 올려라
     public void OnTriggerEnter(Collider other)
     {
-
-        GameManager gm = new GameManager();
-
         if (other.gameObject.CompareTag("CutePenguin"))
         {
             Destroy(other.gameObject);
-            gm.gameOver();
+            GameManager.Instance.OpenGameOverUI();
+            MusicManager.instance.DiePenguin();
             Debug.Log("플레이어의 사망으로 게임이 종료되었습니다.");
         }
 
