@@ -18,7 +18,6 @@ public class ParticleManager : MonoBehaviour
     }
 
     public ParticleSystem particleSystem;
-    public GameObject particleObject;
 
     public bool particleState = false;
 

@@ -36,10 +36,6 @@ public class GameManager : MonoBehaviour
     // game over UI
     public GameObject gameOverUI;
 
-    // game start UI
-    public GameObject gameStartUI;
-
-    
     // 게임 오버
     public void OpenGameOverUI()
     {
@@ -47,7 +43,7 @@ public class GameManager : MonoBehaviour
         gameOverUI.SetActive(true);
 
         // 게임 속도 0배속
-        Time.timeScale = 0f;
+       Time.timeScale = 0f;
 
         // 게임 상태 = '멈춤'
         gState = GameState.Pause;
@@ -63,11 +59,6 @@ public class GameManager : MonoBehaviour
 
         // 처음부터 시작
         SceneManager.LoadScene(0);
-
-        if (gameStartUI == true)
-        {
-            gameStartUI.SetActive(false);
-        }
 
         // 게임 상태 = '시작'
         gState = GameState.Restart;

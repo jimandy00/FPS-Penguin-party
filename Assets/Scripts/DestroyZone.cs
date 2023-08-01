@@ -6,15 +6,13 @@ using UnityEngine;
 public class DestroyZone : MonoBehaviour
 {
 
-    // 적이 감지되면 삭제하고 점수를 올려라
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("CutePenguin"))
         {
-
             ParticleManager.instance.particleState = true;
             ParticleManager.instance.particleSystem.transform.position = other.transform.position;
-            ParticleManager.instance.
+            ParticleManager.instance.StartParticle();
 
             Destroy(other.gameObject);
             GameManager.Instance.OpenGameOverUI();
@@ -24,6 +22,9 @@ public class DestroyZone : MonoBehaviour
 
         else
         {
+            ParticleManager.instance.particleState = true;
+            ParticleManager.instance.particleSystem.transform.position = other.transform.position;
+            ParticleManager.instance.StartParticle();
             Destroy(other.gameObject);
             Debug.Log("에너미가 감지되었습니다.");
         }
@@ -31,7 +32,11 @@ public class DestroyZone : MonoBehaviour
         // local에 저장
         GameObject scoreManagerObject = GameObject.Find("ScoreManager");
         ScoreManager sm = scoreManagerObject.GetComponent<ScoreManager>();
-        sm.SetScore(sm.GetScore() + 1);
+        if(other.gameObject.tag != "CutePenguin")
+        {
+            sm.SetScore(sm.GetScore() + 1);
+        }
+
     }
         
  
